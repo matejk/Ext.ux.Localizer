@@ -26,6 +26,8 @@ Ext.define("Ext.ux.Localizer", {
     localizableProps : {
         // Ext.button
         button : ["text", "tooltip"],
+	menu : ["text"],
+	menuitem : ["text"],
         // Ext.form.field
         checkboxfield : ["fieldLabel", "boxLabel"],
         field : ["fieldLabel"],
@@ -245,7 +247,7 @@ Ext.define("Ext.ux.Localizer", {
     loadLocaleStrings: function(locale) {
         var me = this, localeStrings;
         Ext.Ajax.request({
-            url : "./app/locale/" + locale + ".js",
+            url : "resources/locale/" + locale + ".js",
             async : false,
             success : function(response) {
                 var entries = Ext.decode(response.responseText);
